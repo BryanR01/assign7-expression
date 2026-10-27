@@ -6,6 +6,7 @@ public interface StackInterface<T> {
      * @param item the element to push
      */
     public void push(T item);
+    
 
     /**
      * Removes and returns the item at the top of the stack.
