@@ -1,29 +1,38 @@
 package assignment;
 
-public class Stack implements StackInterface{
+public class Stack<T> implements StackInterface{
+	protected Node<T> head;
+	//protected Node tail;
+	int size;
 
 	@Override
 	public void push(Object item) {
-		
+		Node<T> newNode=new Node(item);
+		newNode.next=head;
+		head=newNode;
+		size++;//Might now work*
 		
 	}
 
 	@Override
 	public Object pop() {
-		// TODO Auto-generated method stub
-		return null;
+		Node<T> deleted=new Node();
+		head=head.next;
+		return deleted;
 	}
 
 	@Override
 	public Object peek() {
-		// TODO Auto-generated method stub
-		return null;
+		return head;
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		if(head==null) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 
 	@Override
